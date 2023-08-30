@@ -1,3 +1,8 @@
+.pokemon {
+    background-color: orange;
+    height: 100vh;
+}
+
 .pokemon__title {
     display: flex;
     align-items: center;
@@ -5,6 +10,7 @@
     font-size: 2rem;
 }
 
-.pokemon__box {
+.pokemon__wrapper {
     
 }
+

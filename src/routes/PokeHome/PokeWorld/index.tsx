@@ -1,17 +1,35 @@
-import './styles.css'
+import { PokemonDTO } from "../../../models/pokemon";
+import axios from "axios";
+import "./styles.css";
+import { useEffect, useState } from "react";
 
 export default function PokeWorld() {
 
-    return(
-        <main>
-            <section className='pokemon'>
-                <div className='pokemon__title'>
-                    <h1>Mandarin Poke World</h1>
-                </div>
-                <div className='pokemon__box'>
-                    <h1>Pokemon Box</h1>
-                </div>
-            </section>
-        </main>
-    )
+  const [pokemons, setPokemons] = useState<PokemonDTO[]>([]);
+
+  useEffect(() => {
+    try {
+      axios.get("https://dev-api-teste.mandarin.com.br/pokemons")
+        .then((response) => {
+            console.log(response.data);
+            setPokemons(response.data);
+        });
+    } catch (error) {
+      console.log(error);
+    }
+  },[]);
+
+
+  return (
+    <main>
+      <section className="pokemon">
+        <div className="pokemon__title">
+          <h1>Mandarin Poke World</h1>
+        </div>
+        <div className="pokemon__wrapper">
+          <h1>Pokemon Box</h1>
+        </div>
+      </section>
+    </main>
+  );
 }
