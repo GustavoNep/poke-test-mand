@@ -1,7 +1,9 @@
 export default function HeaderPoke() {
     return( 
-        <>
-            HeaderPoke here
-        </>
+        <header>
+            <nav>
+                <h1>Mandarin Poke</h1>
+            </nav>
+        </header>
     )
 }
