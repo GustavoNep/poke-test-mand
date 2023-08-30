@@ -1,9 +1,15 @@
 
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import PokeHome from "./routes/PokeHome";
+
+
 function App() {
   return (
-    <>
-      <h1>Poke mand</h1>
-    </>
+    <BrowserRouter>
+      <Routes >
+        <Route path="/" element={<PokeHome />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
