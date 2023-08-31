@@ -2,6 +2,7 @@ import { PokemonDTO } from "../../../models/pokemon";
 import axios from "axios";
 import "./styles.css";
 import { useEffect, useState } from "react";
+import PokeCard from "../../../components/PokeCard";
 
 export default function PokeWorld() {
 
@@ -28,6 +29,7 @@ export default function PokeWorld() {
         </div>
         <div className="pokemon__wrapper">
           <h1>Pokemon Box</h1>
+          <PokeCard />
         </div>
       </section>
     </main>
