@@ -2,24 +2,24 @@ import { useState } from "react";
 import "./styles.css";
 
 type Props = {
-  onSearch: Function;
+  onSearch: (searchText: string) => void;
 };
 
 export default function SearchPoke({ onSearch }: Props) {
   const [text, setText] = useState("");
 
-  function handleChange(event: any) {
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     setText(event.target.value);
   }
 
-  function handleSubmit(event: any) {
+  function handleSubmit(event: React.ChangeEvent<HTMLInputElement>) {
     event.preventDefault();
     onSearch(text);
   }
 
   function handleResetClick() {
     setText("");
-    onSearch(text);
+    onSearch("");
   }
 
   return (

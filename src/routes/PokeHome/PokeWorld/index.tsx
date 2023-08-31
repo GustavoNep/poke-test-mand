@@ -38,8 +38,7 @@ export default function PokeWorld() {
   },[queryParams.name]);
 
   function handleSearch(searchText: string) {
-    setPokemons([]);
-    setQueryParams({ ...queryParams, name: searchText });
+    setQueryParams({name: searchText});
   }
 
   return (
