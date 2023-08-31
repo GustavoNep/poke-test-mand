@@ -28,8 +28,15 @@ export default function PokeWorld() {
           <h1>Mandarin Poke World</h1>
         </div>
         <div className="pokemon__wrapper">
+            {pokemons.map(poke => (
+                <PokeCard 
+                    name={poke.name}
+                    category={poke.category}
+                    image_url={poke.image_url}
+                    background_image_url={poke.background_image_url}
+                />
+            ))}
           
-          <PokeCard />
         </div>
       </section>
     </main>
