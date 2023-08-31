@@ -8,18 +8,18 @@ type Props = {
 export default function SearchPoke({ onSearch }: Props) {
   const [text, setText] = useState("");
 
-  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+  function handleChange(event: any) {
     setText(event.target.value);
   }
 
-  function handleSubmit(event: React.ChangeEvent<HTMLInputElement>) {
+  function handleSubmit(event: any) {
     event.preventDefault();
     onSearch(text);
   }
 
   function handleResetClick() {
     setText("");
-    onSearch("");
+    onSearch(""); 
   }
 
   return (
