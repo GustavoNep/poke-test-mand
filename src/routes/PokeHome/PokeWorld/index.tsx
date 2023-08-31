@@ -3,6 +3,7 @@ import axios from "axios";
 import "./styles.css";
 import { useEffect, useState } from "react";
 import PokeCard from "../../../components/PokeCard";
+import SearchPoke from "../../../components/SearchPoke";
 
 export default function PokeWorld() {
 
@@ -27,7 +28,9 @@ export default function PokeWorld() {
           <h1>Mandarin Pokemon World</h1>
           <p>Search for pokemons here</p>
         </div>
-
+        <div className="search-pokemon">
+            <SearchPoke />
+        </div>
         <div className="pokemon__wrapper">
             {pokemons.map(poke => (
                 <PokeCard 

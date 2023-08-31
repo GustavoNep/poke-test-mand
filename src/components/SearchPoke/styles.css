@@ -1,0 +1,42 @@
+.poke-search-bar {
+    height: 3.7rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
+    
+}
+
+.poke-search-bar button, .poke-search-bar input {
+    border: 1px solid black;
+}
+
+.poke-search-bar input {
+    width: 13%;
+    border-left: none;
+    border-right: none;
+    padding: 0 8px;
+    font-size: 16px;
+}
+
+.poke-search-bar input:focus {
+    outline: none;
+}
+
+.poke-search-bar input::placeholder {
+    color: var(--poke-color-type-two);
+}
+
+.poke-search-bar button {
+    width: 4rem;
+    color: var(--poke-color-type-two);
+}
+
+.poke-search-bar button[type='submit'] {
+    border-right: none;
+    border-radius: 6px 0 0 6px;
+}
+
+.poke-search-bar button[type='reset'] {
+    border-left: none;
+    border-radius: 0 6px 6px 0;
+}

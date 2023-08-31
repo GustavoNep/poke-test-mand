@@ -25,6 +25,9 @@
     margin: 0 auto;
     display: grid;
     grid-gap: 2rem;
+    justify-items: center;
     grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
 }
 
+.search-pokemon {
+}
