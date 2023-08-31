@@ -23,12 +23,17 @@ export default function SearchPoke({ onSearch }: Props) {
   }
 
   return (
-    <form className="poke-search-bar">
-      <button type="submit" onSubmit={handleSubmit}>
-        🔎︎
+    <form className="poke-search-bar" onSubmit={handleSubmit}>
+      <button type="submit">🔎︎</button>
+      <input
+        value={text}
+        type="text"
+        placeholder="Pokemon name"
+        onChange={handleChange}
+      ></input>
+      <button type="reset" onClick={handleResetClick}>
+        🗙
       </button>
-      <input value={text} type="text" placeholder="Pokemon name" onChange={handleChange}></input>
-      <button type="reset" onClick={handleResetClick}>🗙</button>
     </form>
   );
 }
