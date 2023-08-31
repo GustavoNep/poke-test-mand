@@ -12,7 +12,6 @@ export default function PokeWorld() {
     try {
       axios.get("https://dev-api-teste.mandarin.com.br/pokemons")
         .then((response) => {
-            console.log(response.data);
             setPokemons(response.data);
         });
     } catch (error) {
@@ -25,8 +24,10 @@ export default function PokeWorld() {
     <main>
       <section className="pokemon">
         <div className="pokemon__title">
-          <h1>Mandarin Poke World</h1>
+          <h1>Mandarin Pokemon World</h1>
+          <p>Search for pokemons here</p>
         </div>
+
         <div className="pokemon__wrapper">
             {pokemons.map(poke => (
                 <PokeCard 
@@ -36,7 +37,6 @@ export default function PokeWorld() {
                     background_image_url={poke.background_image_url}
                 />
             ))}
-          
         </div>
       </section>
     </main>

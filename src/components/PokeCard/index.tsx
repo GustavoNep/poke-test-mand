@@ -1,6 +1,4 @@
 import './styles.css';
-import backImg from '../../assets/water.png';
-import gifImg from '../../assets/kingdra.gif';
 
 type Props = {
     name: string,
