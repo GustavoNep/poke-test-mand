@@ -2,6 +2,7 @@
     border-radius: 1rem;
     box-shadow: 0 2px 9px rgba(0, 0, 0, 0.2);
     width: 20rem;
+    cursor: pointer;
 }
 .container-card__img {
     width: 100%;
