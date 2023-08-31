@@ -30,7 +30,6 @@ export default function PokeWorld() {
       axios(config)
         .then((response) => {
             setPokemons(response.data);
-            console.log(response.data)
         });
     } catch (error) {
       console.log(error);

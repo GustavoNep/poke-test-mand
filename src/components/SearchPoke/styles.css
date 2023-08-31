@@ -16,6 +16,10 @@
     border-right: none;
     padding: 0 8px;
     font-size: 16px;
+    
+    @media only screen and (max-width: 767px) {
+        width: 150px;
+    }
 }
 
 .poke-search-bar input:focus {

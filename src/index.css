@@ -28,3 +28,21 @@ body {
   padding: 3rem;
   background-color: var(--poke-color-bg-primary)
 }
+
+@media only screen and (max-width: 767px) {
+  html {
+    font-size: 50%;
+  }
+  body {
+    padding: 1rem;
+  }
+}
+@media only screen and (max-width: 425px) {
+  html {
+    font-size: 40%;
+  }
+  body {
+    padding: 0rem;
+  }
+}
+
