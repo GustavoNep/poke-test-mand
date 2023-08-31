@@ -7,7 +7,7 @@ export default function HeaderPoke() {
                 <div className='header-container__logo'>
                     <h1>MANDARIN</h1>
                 </div>
-                <div>
+                <div className='header-container__login'>
                     <h1>Entrar</h1>
                 </div>
             </nav>

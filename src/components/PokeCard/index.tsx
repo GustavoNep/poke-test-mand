@@ -7,7 +7,6 @@ type Props = {
     background_image_url: string,
 }
 
-
 export default function PokeCard({name, category, image_url, background_image_url} : Props) {
     return (
         <main className='container-card'>

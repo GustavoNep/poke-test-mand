@@ -3,6 +3,10 @@
     display: flex;
     justify-content: center;
     margin-top: 4rem;
+    @media only screen and (max-width: 767px) {
+        height: 4rem;
+        
+    }   
     
 }
 
@@ -15,11 +19,11 @@
     border-left: none;
     border-right: none;
     padding: 0 8px;
-    font-size: 16px;
-    
+    font-size: 16px;  
     @media only screen and (max-width: 767px) {
-        width: 150px;
-    }
+        width: 140px;
+        
+    }   
 }
 
 .poke-search-bar input:focus {
