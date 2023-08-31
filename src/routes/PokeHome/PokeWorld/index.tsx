@@ -28,7 +28,7 @@ export default function PokeWorld() {
           <h1>Mandarin Poke World</h1>
         </div>
         <div className="pokemon__wrapper">
-          <h1>Pokemon Box</h1>
+          
           <PokeCard />
         </div>
       </section>

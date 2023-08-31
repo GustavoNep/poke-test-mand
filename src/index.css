@@ -6,14 +6,25 @@
   box-sizing: inherit;
 }
 
+:root {
+  --poke-color-bg-primary: #0e0e10;
+  --poke-color-bg-secondary: #1f1f23;
+  --poke-color-type-one: #ba90f9;
+  --poke-color-type-two: #2b234d;
+  --poke-color-type-three: #eb0400;
+  --poke-color-white: #eeeef0;
+  --poke-color-white-dark: #adadb8;
+  
+}
+
 html {
   box-sizing: border-box;
   font-size: 62.5%; 
-  
 }
 
 body {
   font-family: "Lato", sans-serif;
-  padding: 4rem;
+  padding: 3rem;
   
+  background-color: var(--poke-color-bg-primary)
 }

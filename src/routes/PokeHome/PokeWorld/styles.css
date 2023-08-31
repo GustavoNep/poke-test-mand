@@ -1,6 +1,7 @@
 .pokemon {
-    background-color: orange;
+    background-color: var(--poke-color-bg-secondary);
     height: 100vh;
+    border-radius: 5px;
 }
 
 .pokemon__title {
@@ -8,6 +9,7 @@
     align-items: center;
     justify-content: center;
     font-size: 2rem;
+    color: white;
 }
 
 .pokemon__wrapper {

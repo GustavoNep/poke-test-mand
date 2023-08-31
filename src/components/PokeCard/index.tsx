@@ -11,8 +11,12 @@ export default function PokeCard() {
             </div>
             
             <div className='container-card__desc'>
-                Water type pokemon
-
+                <div className='container-card__desc--title'>
+                    <h1>Vaporeon</h1>
+                </div>
+                <div className='container-card__desc--subtitle'>
+                    <p>Water type pokemon</p>
+                </div> 
             </div>
         </main>
     )
