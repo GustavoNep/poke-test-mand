@@ -20,6 +20,10 @@ export default function PokeWorld() {
     }
   },[]);
 
+  function handleSearch(searchText: string) {
+    
+  }
+
 
   return (
     <main>
@@ -29,7 +33,7 @@ export default function PokeWorld() {
           <p>Search for pokemons here</p>
         </div>
         <div className="search-pokemon">
-            <SearchPoke />
+            <SearchPoke onSearch={handleSearch}/>
         </div>
         <div className="pokemon__wrapper">
             {pokemons.map(poke => (
