@@ -1,3 +1,4 @@
+import { PokemonDTO } from '../../models/pokemon';
 import './styles.css';
 
 type Props = {
@@ -5,12 +6,19 @@ type Props = {
     category: string,
     image_url: string,
     background_image_url: string,
+    onClick?: () => void;
 }
 
-export default function PokeCard({name, category, image_url, background_image_url} : Props) {
+export default function PokeCard({name, category, image_url, background_image_url, onClick} : Props) {
+
+    const handleClick = () => {
+        if (onClick) {
+          onClick();
+        }
+      };
+    
     return (
-        <main className='container-card'>
-           
+        <div onClick={onClick ? handleClick : undefined} className='container-card' >   
             <div className='container-card__img'>
                 <img src={background_image_url} alt='/' className='container-card__img--background'></img>
                 <img src={image_url} alt='/' className='container-card__img--gif'></img>
@@ -24,6 +32,6 @@ export default function PokeCard({name, category, image_url, background_image_ur
                     <p> <span>{category}</span>type pokemon</p>
                 </div> 
             </div>
-        </main>
+        </div>
     )
 }

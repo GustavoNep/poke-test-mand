@@ -14,9 +14,24 @@ type QueryParams = {
 export default function PokeWorld() {
   const [pokemons, setPokemons] = useState<PokemonDTO[]>([]);
 
-  
+  const [selectedPokemon, setSelectedPokemon] = useState<PokemonDTO | null>(null);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
   const [queryParams, setQueryParams] = useState<QueryParams>({ name: "" });
+
+  type Props = {
+    poke: PokemonDTO;
+  }
+  const openModal = ({ poke } : Props) => {
+    setSelectedPokemon(poke);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setSelectedPokemon(null);
+    setIsModalOpen(false);
+  };
 
   useEffect(() => {
     try {
@@ -54,6 +69,7 @@ export default function PokeWorld() {
         <div className="pokemon__wrapper">
           {pokemons.map((poke) => (
             <PokeCard
+              onClick={() => openModal({ poke })}
               key={poke.id}
               name={poke.name}
               category={poke.category}
@@ -62,9 +78,11 @@ export default function PokeWorld() {
             />
           ))}
         </div>
-        <div className="modal-wrapper">
-          <PokeCardModal />
-        </div>
+        {isModalOpen && (
+          <div className="modal-wrapper">
+            <PokeCardModal pokemon={selectedPokemon} onClose={closeModal}/>
+          </div>
+        )}
       </section>
     </main>
   );

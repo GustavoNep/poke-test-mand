@@ -3,6 +3,7 @@ import gifImg from "../../assets/kingdra.gif";
 import { AiOutlineClose } from 'react-icons/ai';
 
 import "./styles.css";
+import { PokemonDTO } from "../../models/pokemon";
 
 type Props = {
   name: string;
@@ -11,25 +12,30 @@ type Props = {
   background_image_url: string;
 };
 
-export default function PokeCardModal() {
+type pokemonCardModalProps = {
+    pokemon: PokemonDTO | null;
+    onClose: () => void;
+}
+
+export default function PokeCardModal({pokemon, onClose,} : pokemonCardModalProps) {
   return (
     <main className="container-overlay">
       <div className="container-overlay-section">
          <div className="my-icon-class">
           
             <span>
-                <AiOutlineClose />
+                <AiOutlineClose onClick={onClose}/>
             </span>
         </div>
         <div className="container-overlay-section__image">
           
-          <img src={backImg} alt="/" className="container-section__img"></img>
-          <img src={gifImg} alt="/" className="container-section__gif"></img>
+          <img src={pokemon?.background_image_url} alt="/" className="container-section__img"></img>
+          <img src={pokemon?.image_url} alt="/" className="container-section__gif"></img>
         </div>
         <div className="container-overlay-section__desc">
           <div className="desc-title">
-            <h1>Kingdra</h1>
-            <p> This kingrda type water wants to fight !</p>
+            <h1>{pokemon?.name}</h1>
+            <p> This {pokemon?.name} type {pokemon?.category} wants to fight !</p>
           </div>
 
           <div className="buttons">
