@@ -1,0 +1,127 @@
+.container-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+}
+
+.container-overlay-section {
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 0px;
+    max-width: 470px;
+    width: 100%;
+    max-height: 540px;
+    overflow-y: auto;
+    z-index: 1001;
+    background-color: var(--poke-color-bg-secondary);
+}
+
+.container-overlay-section__image {
+    position: relative;
+}
+
+.container-section__img {
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.container-section__gif {
+    position: absolute;
+    width: 16%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.buttons {
+    padding-bottom: 7px;
+}
+
+.desc-title {
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.buttons-choices {
+    display: flex;
+    height: 5rem;
+    margin-bottom: 1rem;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 10px;
+}
+
+.button-attack,
+.button-run {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button-attack {
+    background-color: #ff6f61;
+    color: white;
+}
+
+.button-run {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.button-attack:hover,
+.button-run:hover {
+    background-color: #e74c3c;
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.button-run:hover {
+    background-color: #0ecc5d;
+}
+
+
+.button-attack:active,
+.button-run:active {
+    transform: scale(0.95);
+    box-shadow: none;
+}
+
+.desc-description {
+    color: white;
+    width: 100%;
+}
+
+.my-icon-class {
+    font-size: 16px;
+    padding: 3px;
+    color: white;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.my-icon-class span {
+    cursor: pointer;
+   
+}

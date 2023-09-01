@@ -5,39 +5,40 @@ import { useEffect, useState } from "react";
 import PokeCard from "../../../components/PokeCard";
 import SearchPoke from "../../../components/SearchPoke";
 import { AxiosRequestConfig } from "axios";
+import PokeCardModal from "../../../components/PokeCardModal";
 
 type QueryParams = {
-    name: string,
-}
+  name: string;
+};
 
 export default function PokeWorld() {
-
   const [pokemons, setPokemons] = useState<PokemonDTO[]>([]);
 
-  const [queryParams, setQueryParams] = useState<QueryParams>({name: ""})
+  
+
+  const [queryParams, setQueryParams] = useState<QueryParams>({ name: "" });
 
   useEffect(() => {
     try {
-        const config : AxiosRequestConfig = {
-            method: "GET",
-            baseURL: "https://dev-api-teste.mandarin.com.br",
-            url: "/pokemons",
-            params: {
-                name: queryParams.name,
-            }
-        }
+      const config: AxiosRequestConfig = {
+        method: "GET",
+        baseURL: "https://dev-api-teste.mandarin.com.br",
+        url: "/pokemons",
+        params: {
+          name: queryParams.name,
+        },
+      };
 
-      axios(config)
-        .then((response) => {
-            setPokemons(response.data);
-        });
+      axios(config).then((response) => {
+        setPokemons(response.data);
+      });
     } catch (error) {
       console.log(error);
     }
-  },[queryParams.name]);
+  }, [queryParams.name]);
 
   function handleSearch(searchText: string) {
-    setQueryParams({name: searchText});
+    setQueryParams({ name: searchText });
   }
 
   return (
@@ -48,18 +49,21 @@ export default function PokeWorld() {
           <p>Search for pokemons here</p>
         </div>
         <div className="search-pokemon">
-            <SearchPoke onSearch={handleSearch}/>
+          <SearchPoke onSearch={handleSearch} />
         </div>
         <div className="pokemon__wrapper">
-            {pokemons.map(poke => (
-                <PokeCard 
-                    key={poke.id}
-                    name={poke.name}
-                    category={poke.category}
-                    image_url={poke.image_url}
-                    background_image_url={poke.background_image_url}
-                />
-            ))}
+          {pokemons.map((poke) => (
+            <PokeCard
+              key={poke.id}
+              name={poke.name}
+              category={poke.category}
+              image_url={poke.image_url}
+              background_image_url={poke.background_image_url}
+            />
+          ))}
+        </div>
+        <div className="modal-wrapper">
+          <PokeCardModal />
         </div>
       </section>
     </main>
