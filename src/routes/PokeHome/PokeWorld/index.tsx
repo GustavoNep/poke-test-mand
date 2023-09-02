@@ -26,11 +26,13 @@ export default function PokeWorld() {
   const openModal = ({ poke } : Props) => {
     setSelectedPokemon(poke);
     setIsModalOpen(true);
+    document.body.classList.add('modal-open');
   };
 
   const closeModal = () => {
     setSelectedPokemon(null);
     setIsModalOpen(false);
+    document.body.classList.remove('modal-open');
   };
 
   useEffect(() => {
