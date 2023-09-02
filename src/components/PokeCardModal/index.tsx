@@ -1,16 +1,7 @@
-import backImg from "../../assets/water.png";
-import gifImg from "../../assets/kingdra.gif";
-import { AiOutlineClose } from 'react-icons/ai';
-
 import "./styles.css";
+import { AiOutlineClose } from 'react-icons/ai';
 import { PokemonDTO } from "../../models/pokemon";
 
-type Props = {
-  name: string;
-  category: string;
-  image_url: string;
-  background_image_url: string;
-};
 
 type pokemonCardModalProps = {
     pokemon: PokemonDTO | null;

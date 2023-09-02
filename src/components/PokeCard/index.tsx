@@ -1,4 +1,3 @@
-import { PokemonDTO } from '../../models/pokemon';
 import './styles.css';
 
 type Props = {

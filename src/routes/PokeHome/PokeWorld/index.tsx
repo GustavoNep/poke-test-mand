@@ -1,10 +1,10 @@
-import { PokemonDTO } from "../../../models/pokemon";
-import axios from "axios";
 import "./styles.css";
+import { PokemonDTO } from "../../../models/pokemon";
 import { useEffect, useState } from "react";
+import { AxiosRequestConfig } from "axios";
+import axios from "axios";
 import PokeCard from "../../../components/PokeCard";
 import SearchPoke from "../../../components/SearchPoke";
-import { AxiosRequestConfig } from "axios";
 import PokeCardModal from "../../../components/PokeCardModal";
 
 type QueryParams = {
